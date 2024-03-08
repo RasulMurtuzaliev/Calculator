@@ -20,7 +20,7 @@ public class Main {
     }
 
     public static String calc(String input) throws Exception {
-        String[] parts = input.split(" ");
+        String[] parts = input.replaceAll("\\s+","").split("(?=[-+*/])|(?<=[-+*/])");
         if (parts.length != 3) {
             throw new Exception("Формат математической операции не удовлетворяет заданию");
         }
